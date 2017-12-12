@@ -5,7 +5,7 @@ import javax.validation.constraints.Pattern;
 
 public abstract class User {
 
-    private static String NAME_PATTERN = "%s %s";
+    private static String NAME_PATTERN = "%s %s %s";
 
     @NotBlank
     private int ID;
@@ -29,7 +29,7 @@ public abstract class User {
     }
 
     public String getName(){
-        return String.format(NAME_PATTERN, firstname, lastname);
+        return String.format(NAME_PATTERN, getRole(), firstname, lastname);
     }
 
     public String getFirstname() {
