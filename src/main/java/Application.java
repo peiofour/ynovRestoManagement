@@ -1,6 +1,5 @@
-import view.DashboardView;
 import presenter.DashboardPresenter;
-
+import view.DashboardView;
 
 import javax.swing.*;
 

@@ -45,6 +45,6 @@ public class DashboardView implements DashboardPresenter.Displayable {
     }
 
     public JButton getAddEmployeeButton() {
-            return loginButton;
-        }
+       return loginButton;
+    }
 }
