@@ -10,6 +10,7 @@ public class Product {
 
     public Product(String name, int quantity, int price){
 
+
         this.name = name;
         this.price = price;
         this.quantity = quantity;
