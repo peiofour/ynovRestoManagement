@@ -2,19 +2,20 @@ package productClass;
 
 public class Product {
 
-    private String nameproduct;
+    private String name;
 
     private int quantity;
 
     private int price;
 
-    public Product(String nameproduct, int quantity, int price){
+    public Product(String name, int quantity, int price){
 
+
+        this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.price = quantity;
 
-        
     }
 
     public int getPrice() {
@@ -25,8 +26,8 @@ public class Product {
         return quantity;
     }
 
-    public String getNameproduct() {
-        return nameproduct;
+    public String getName() {
+        return name;
     }
 }
 
