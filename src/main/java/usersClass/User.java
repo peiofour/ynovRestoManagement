@@ -5,6 +5,10 @@ import javax.validation.constraints.Pattern;
 
 public abstract class User {
 
+    private static String NAME_PATTERN = "%s %s";
+
+    @NotBlank
+    private int ID;
     @NotBlank
     private String firstname;
     @NotBlank
@@ -16,12 +20,27 @@ public abstract class User {
     private String password;
 
 
+    public User(int id, String firstname, String lastname, String email, String password){
+        this.ID = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+    }
 
+    public String getName(){
+        return String.format(NAME_PATTERN, firstname, lastname);
+    }
 
-    public User(String _firstname, String _lastname, String _email, String _password){
-        this.firstname = _firstname;
-        this.lastname = _lastname;
-        this.email = _email;
-        this.password = _password;
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLastname() {
+        return lastname;
     }
 }
