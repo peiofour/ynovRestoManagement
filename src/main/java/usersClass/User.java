@@ -1,11 +1,13 @@
 package usersClass;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 public abstract class User {
 
-    private static String NAME_PATTERN = "%s %s";
+    private static String NAME_PATTERN = "%s %s %s";
 
     @NotBlank
     private int ID;
@@ -25,11 +27,15 @@ public abstract class User {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     public String getName(){
-        return String.format(NAME_PATTERN, firstname, lastname);
+        return String.format(NAME_PATTERN, getRole(), firstname, lastname);
+    }
+
+    public Boolean verifyPassword(String _password){
+        return BCrypt.checkpw(_password, this.password);
     }
 
     public String getFirstname() {

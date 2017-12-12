@@ -8,12 +8,20 @@ import java.awt.*;
 
 public class DashboardView implements DashboardPresenter.Displayable {
 
-        private JButton addEmployee;
-        private JButton displayEmployees;
+        private JButton loginButton;
+        private JTextField mailText;
+        private JLabel labelMail;
+        private JLabel labelPassword;
+        private JTextField passwordText;
 
         public DashboardView() {
-            addEmployee = new JButton("Add employee");
-            displayEmployees = new JButton("Display employees");
+            loginButton = new JButton("Login");
+            mailText = new JTextField();
+            mailText.setColumns(10);
+            passwordText = new JTextField();
+            passwordText.setColumns(10);
+            labelMail = new JLabel("Adresse mail");
+            labelPassword = new JLabel("Password");
         }
 
 
@@ -21,22 +29,22 @@ public class DashboardView implements DashboardPresenter.Displayable {
             DefaultButtonModel model = new DefaultButtonModel();
             Box verticalBox = Box.createVerticalBox();
             verticalBox.add(Box.createVerticalGlue());
-            verticalBox.add(addEmployee);
-            verticalBox.add(Box.createVerticalGlue());
-            verticalBox.add(displayEmployees);
-            verticalBox.add(Box.createVerticalGlue());
+            verticalBox.add(labelMail);
+            verticalBox.add(mailText);
+            verticalBox.add(labelPassword);
+            verticalBox.add(passwordText);
+            verticalBox.add(loginButton);
             JPanel panel = new JPanel(new GridBagLayout());
             panel.add(verticalBox);
             return panel;
         }
 
+    @Override
+    public JButton getDisplayEmployeeListButton() {
+        return null;
+    }
 
-        public JButton getDisplayEmployeeListButton() {
-            return displayEmployees;
-        }
-
-
-        public JButton getAddEmployeeButton() {
-            return addEmployee;
-        }
+    public JButton getAddEmployeeButton() {
+       return loginButton;
+    }
 }

@@ -3,7 +3,6 @@ package presenter;
 import view.View;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable> {
 
@@ -15,9 +14,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
         JButton getAddEmployeeButton();
     }
 
-    public DashboardPresenter(Displayable view) {
-        super(view);
-    }
+    public DashboardPresenter(Displayable view) { super(view); }
 
     @Override
     public String getPath() {

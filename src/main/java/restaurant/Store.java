@@ -1,23 +1,27 @@
 package restaurant;
 
+import productClass.Product;
 import usersClass.Gerant;
 
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 public class Store {
 
     @NotBlank
     private String name;
     @NotBlank
-    private String adress;
+    private String address;
     @NotBlank
     private Gerant gerant;
     @NotBlank
     private int phoneNumber;
 
-    public Store(String name, String adress, Gerant gerant, int phoneNumber) {
+    private List<Product> productList;
+
+    public Store(String name, String address, Gerant gerant, int phoneNumber) {
         this.name = name;
-        this.adress = adress;
+        this.address = address;
         this.gerant = gerant;
         this.phoneNumber = phoneNumber;
     }
@@ -26,8 +30,8 @@ public class Store {
         return name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public int getPhoneNumber() {
