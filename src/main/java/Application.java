@@ -1,3 +1,4 @@
+import SQLService.ConnectSQL;
 import view.DashboardView;
 import presenter.DashboardPresenter;
 
@@ -8,6 +9,7 @@ import static javax.swing.SwingUtilities.invokeLater;
 
 public class Application {
     public static void main(String[] args) {
+        ConnectSQL new_test = new ConnectSQL();
         invokeLater(Application::run);
     }
 
