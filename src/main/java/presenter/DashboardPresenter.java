@@ -5,37 +5,23 @@ import view.View;
 import javax.swing.*;
 import java.awt.*;
 
-public class DashboardPresenter {
+public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable> {
 
-    private JButton addEmployee;
-    private JButton displayEmployees;
+    public static final String NAME = "dashboard";
 
-    public DashboardView() {
-        addEmployee = new JButton("Add employee");
-        displayEmployees = new JButton("Display employees");
+    public interface Displayable extends View {
+        JButton getDisplayEmployeeListButton();
+
+        JButton getAddEmployeeButton();
+    }
+
+    public DashboardPresenter(Displayable view) {
+        super(view);
     }
 
     @Override
-    public Component getComponent() {
-        DefaultButtonModel model = new DefaultButtonModel();
-        Box verticalBox = Box.createVerticalBox();
-        verticalBox.add(Box.createVerticalGlue());
-        verticalBox.add(addEmployee);
-        verticalBox.add(Box.createVerticalGlue());
-        verticalBox.add(displayEmployees);
-        verticalBox.add(Box.createVerticalGlue());
-        JPanel panel = new JPanel(new GridBagLayout());
-        panel.add(verticalBox);
-        return panel;
+    public String getPath() {
+        return NAME;
     }
 
-    @Override
-    public JButton getDisplayEmployeeListButton() {
-        return displayEmployees;
-    }
-
-    @Override
-    public JButton getAddEmployeeButton() {
-        return addEmployee;
-    }
 }

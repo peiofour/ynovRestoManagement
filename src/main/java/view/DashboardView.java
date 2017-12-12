@@ -1,10 +1,12 @@
 package view;
 
+import presenter.DashboardPresenter;
+
 import javax.swing.*;
 import java.awt.*;
 
 
-public class DashboardView {
+public class DashboardView implements DashboardPresenter.Displayable {
 
         private JButton addEmployee;
         private JButton displayEmployees;
@@ -14,7 +16,7 @@ public class DashboardView {
             displayEmployees = new JButton("Display employees");
         }
 
-        @Override
+
         public Component getComponent() {
             DefaultButtonModel model = new DefaultButtonModel();
             Box verticalBox = Box.createVerticalBox();
@@ -28,12 +30,12 @@ public class DashboardView {
             return panel;
         }
 
-        @Override
+
         public JButton getDisplayEmployeeListButton() {
             return displayEmployees;
         }
 
-        @Override
+
         public JButton getAddEmployeeButton() {
             return addEmployee;
         }

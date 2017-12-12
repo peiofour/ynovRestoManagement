@@ -1,7 +1,6 @@
-import sun.rmi.server.Dispatcher;
 import view.DashboardView;
-
 import presenter.DashboardPresenter;
+
 
 import javax.swing.*;
 
@@ -15,7 +14,7 @@ public class Application {
     private static void run() {
         JFrame jFrame = new JFrame();
 
-        Dispatcher dispatcher = new Dispatcher(jFrame);
+        service.Dispatcher dispatcher = new service.Dispatcher(jFrame);
         dispatcher.registerPresenter(new DashboardPresenter(new DashboardView()));
         jFrame.setVisible(true);
         jFrame.setName(DashboardPresenter.NAME);
