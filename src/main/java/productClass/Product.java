@@ -1,6 +1,6 @@
 package productClass;
 
-public class product {
+public class Product {
 
     private String nameproduct;
 
@@ -8,13 +8,13 @@ public class product {
 
     private int price;
 
-    public product(String nameproduct, int quantity, int price){
+    public Product(String nameproduct, int quantity, int price){
 
         this.price = price;
         this.quantity = quantity;
         this.price = quantity;
 
-
+        
     }
 
     public int getPrice() {
