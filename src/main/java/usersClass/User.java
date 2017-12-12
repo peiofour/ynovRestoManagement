@@ -43,4 +43,6 @@ public abstract class User {
     public String getLastname() {
         return lastname;
     }
+
+    public abstract String getRole();
 }
