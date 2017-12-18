@@ -1,25 +1,32 @@
 package ListGestion;
 
 import restaurant.Store;
-import usersClass.Gerant;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Stores {
 
-    private List<Store> stores;
+    public List<Store> stores;
+    public static Stores instance;
 
     public Stores(){
         this.stores = new ArrayList<>();
     }
 
-    private void addStore(Store store, Gerant gerant){
+    public void addStore(Store store){
         this.stores.add(store);
-        gerant.setStore(store);
     }
 
     public List<Store> getStores() {
         return stores;
     }
+
+    public static Stores getInstance(){
+        if(instance == null){
+            instance = new Stores();
+        }
+        return instance;
+    }
+
 }

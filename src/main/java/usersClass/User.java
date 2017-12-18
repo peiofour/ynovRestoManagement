@@ -51,4 +51,8 @@ public abstract class User {
     }
 
     public abstract String getRole();
+
+    public String getFullName() {
+        return firstname + " " + lastname;
+    }
 }

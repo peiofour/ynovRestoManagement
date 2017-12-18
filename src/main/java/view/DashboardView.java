@@ -39,12 +39,7 @@ public class DashboardView implements DashboardPresenter.Displayable {
             return panel;
         }
 
-    @Override
-    public JButton getDisplayEmployeeListButton() {
-        return null;
-    }
-
-    public JButton getAddEmployeeButton() {
+    public JButton getConnexion() {
        return loginButton;
     }
 }

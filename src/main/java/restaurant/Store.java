@@ -8,8 +8,10 @@ import java.util.List;
 
 public class Store {
 
+    private static String NAME_PATTERN = "%s %s %s";
+
     @NotBlank
-    private String name;
+    private String storeName;
     @NotBlank
     private String address;
     @NotBlank
@@ -20,14 +22,15 @@ public class Store {
     private List<Product> productList;
 
     public Store(String name, String address, Gerant gerant, int phoneNumber) {
-        this.name = name;
+        this.storeName = name;
         this.address = address;
         this.gerant = gerant;
         this.phoneNumber = phoneNumber;
     }
 
+
     public String getName() {
-        return name;
+        return storeName;
     }
 
     public String getAddress() {
@@ -41,4 +44,5 @@ public class Store {
     public Gerant getGerant() {
         return gerant;
     }
+
 }
