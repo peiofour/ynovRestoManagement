@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS roles(
+  ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  role VARCHAR(15) NOT NULL
+)ENGINE=InnoDB;
+
+INSERT INTO roles(role) VALUES
+  ('Admin'), ('Gerant'), ('Gestionnaire');

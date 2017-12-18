@@ -14,7 +14,7 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
 
     public static final String NAME = "store-form";
 
-    public StoreFormPresenter(Displayable view) {
+    public StoreFormPresenter(Displayable view, Stores stores) {
         super(view);
     }
 
