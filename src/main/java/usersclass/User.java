@@ -37,9 +37,7 @@ public abstract class User {
         return String.format(NAME_PATTERN, getRole(), firstname, lastname);
     }
 
-    public Boolean verifyPassword(String _password){
-        return BCrypt.checkpw(_password, this.password);
-    }
+    public String getPassword(){ return password; }
 
     public String getFirstname() {
         return firstname;

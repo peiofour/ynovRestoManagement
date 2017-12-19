@@ -92,7 +92,7 @@ public class RequestHandler {
 
     public void addStore(String storeName, String address, int leaderId,String phoneNumber){
         jdbi.withHandle(handle -> {
-            handle.createUpdate("INSERT INTO users(gerant_id,name,phone,address) VALUES (:gerant_id,:name,:phone,:address)")
+            handle.createUpdate("INSERT INTO stores(gerant_id,name,phone,address) VALUES (:gerant_id,:name,:phone,:address)")
                     .bind("gerant_id", leaderId)
                     .bind("name", storeName)
                     .bind("phone", phoneNumber)
@@ -102,5 +102,23 @@ public class RequestHandler {
         });
     }
 
+    // *******************************************************************************
 
+    public List<User> getUserByMail(String mail, String password){
+        List<User> user = jdbi.withHandle(handle ->
+                handle.createQuery("select * from users where user="+mail)
+                        .map(this::mapUser)
+                        .list());
+
+        if(user.size() == 1){
+            if(PasswordManager.checkPassword(user.get(0).getPassword(), password)){
+                System.out.println("good");
+            }
+            else{
+                System.out.println("bad asf");
+            }
+
+        }
+        return user;
+    }
 }

@@ -1,8 +1,12 @@
 package presenter;
 
+import utils.ConnectionHandler;
+import utils.RequestHandler;
 import view.View;
 
 import javax.swing.*;
+
+import static utils.Constants.STORENAME;
 
 public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable> {
 
@@ -17,7 +21,10 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
 
     @Override
     public void execute(){
-        getView().getConnexion().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getConnexion().addActionListener(e ->
+                //goTo(MenuPresenter.NAME)
+                RequestHandler.getInstance().getUserByMail()
+        );
         getView().getIpButton().addActionListener(e -> goTo(ChangeIpPresenter.NAME));
     }
 
