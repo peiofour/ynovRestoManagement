@@ -1,12 +1,9 @@
 package presenter;
 
-import utils.ConnectionHandler;
 import utils.RequestHandler;
 import view.View;
 
 import javax.swing.*;
-
-import static utils.Constants.STORENAME;
 
 public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable> {
 
@@ -15,6 +12,8 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
     public interface Displayable extends View {
         JButton getConnexion();
         JButton getIpButton();
+        JTextField getUserMail();
+        JTextField getUserPassword();
     }
 
     public DashboardPresenter(Displayable view) { super(view); }
@@ -22,8 +21,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
     @Override
     public void execute(){
         getView().getConnexion().addActionListener(e ->
-                //goTo(MenuPresenter.NAME)
-                RequestHandler.getInstance().getUserByMail("test@test.fr", "test")
+                gotoMenuPresenter()
         );
         getView().getIpButton().addActionListener(e -> goTo(ChangeIpPresenter.NAME));
     }
@@ -31,6 +29,17 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
     @Override
     public String getPath() {
         return NAME;
+    }
+
+    public void gotoMenuPresenter(){
+        if(RequestHandler.getInstance().checkUserByMail(getView().getUserMail().getText(), getView().getUserPassword().getText())){
+
+            goTo(MenuPresenter.NAME);
+        }
+        else{
+        }
+
+
     }
 
 }

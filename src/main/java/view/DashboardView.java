@@ -49,4 +49,14 @@ public class DashboardView implements DashboardPresenter.Displayable {
     public JButton getIpButton() {
         return ipButton;
     }
+
+    @Override
+    public JTextField getUserMail() {
+        return mailText;
+    }
+
+    @Override
+    public JTextField getUserPassword() {
+        return passwordText;
+    }
 }

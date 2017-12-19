@@ -2,6 +2,7 @@ package utils;
 
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.StatementContext;
+import presenter.MenuPresenter;
 import usersclass.Admin;
 import usersclass.Gerant;
 import usersclass.Gestionnaire;
@@ -88,7 +89,6 @@ public class RequestHandler {
     }
 
     // *******************************************************************************
-//RequestHandler.getInstance().addStore(getView().getValueForField(STORENAME),getView().getValueForField(ADDRESS),1,Integer.valueOf(getView().getValueForField(PHONE_NUMBER)));
 
     public void addStore(String storeName, String address, int leaderId,String phoneNumber){
         jdbi.withHandle(handle -> {
@@ -104,7 +104,9 @@ public class RequestHandler {
 
     // *******************************************************************************
 
-    public List<User> getUserByMail(String mail, String password){
+    public boolean checkUserByMail(String mail, String password){
+        System.out.println(mail);
+        System.out.println(password);
         List<User> user = jdbi.withHandle(handle ->
                 handle.createQuery("select * from users where user='"+mail+"';")
                         .map(this::mapUser)
@@ -114,12 +116,17 @@ public class RequestHandler {
             System.out.println(user.get(0).getPassword());
             if(PasswordManager.checkPassword(password,user.get(0).getPassword())){
                 System.out.println("good");
+                return true;
             }
             else{
                 System.out.println("bad asf");
             }
 
         }
-        return user;
+        return false;
     }
+
+    // *******************************************************************************
+
+
 }
