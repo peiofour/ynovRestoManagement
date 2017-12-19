@@ -106,12 +106,13 @@ public class RequestHandler {
 
     public List<User> getUserByMail(String mail, String password){
         List<User> user = jdbi.withHandle(handle ->
-                handle.createQuery("select * from users where user="+mail)
+                handle.createQuery("select * from users where user='"+mail+"';")
                         .map(this::mapUser)
                         .list());
 
         if(user.size() == 1){
-            if(PasswordManager.checkPassword(user.get(0).getPassword(), password)){
+            System.out.println(user.get(0).getPassword());
+            if(PasswordManager.checkPassword(password,user.get(0).getPassword())){
                 System.out.println("good");
             }
             else{
