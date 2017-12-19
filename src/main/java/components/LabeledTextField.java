@@ -12,6 +12,7 @@ public class LabeledTextField extends JPanel {
         this.label = new JLabel(label);
         input = new JTextField();
         input.setPreferredSize(new Dimension(400,50));
+
         errorMessage = new JLabel();
         errorMessage.setForeground(Color.RED);
 

@@ -20,8 +20,8 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         JTable getStoreTable();
         JButton getCreateStore();
         JButton getBackButton();
-
         JButton getEditStore();
+
     }
 
     @Override

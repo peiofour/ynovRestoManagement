@@ -24,7 +24,6 @@ public class Application {
         dispatcher.registerPresenter(new MenuPresenter(new MenuView()));
         dispatcher.registerPresenter(new UserListPresenter(new UserListView()));
         dispatcher.registerPresenter(new ProductListPresenter(new ProductListView()));
-
         jFrame.setVisible(true);
         jFrame.setName(DashboardPresenter.NAME);
         jFrame.setSize(800, 800);

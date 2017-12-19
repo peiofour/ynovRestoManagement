@@ -27,6 +27,7 @@ public class StoreListView implements StoreListPresenter.Displayable {
         editStore = new JButton("Edit a Store");
         backButton = new JButton("Back to Menu");
 
+
         subPanel.add(createStore);
         subPanel.add(editStore);
         subPanel.add(backButton);

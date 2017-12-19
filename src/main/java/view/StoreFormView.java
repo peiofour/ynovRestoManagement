@@ -26,6 +26,7 @@ public class StoreFormView implements StoreFormPresenter.Displayable {
     private Map<String, LabeledTextField> fields;
     String[] gerantStrings = {"A","B","C"};
 
+
     public StoreFormView() {
         fields = new HashMap<>();
     }

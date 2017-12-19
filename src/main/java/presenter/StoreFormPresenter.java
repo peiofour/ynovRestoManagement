@@ -15,6 +15,7 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
     public static final String NAME = "store-form";
 
     public StoreFormPresenter(Displayable view) {
+
         super(view);
     }
 
@@ -36,6 +37,7 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
     public void execute() {
         getView().getSubmitButton().addActionListener(this::createStore);
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+
     }
 
     private void createStore(ActionEvent actionEvent) {
