@@ -16,13 +16,6 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         this.store = store;
     }
 
-    public interface Displayable extends View {
-        JTable getStoreTable();
-        JButton getCreateStore();
-        JButton getBackButton();
-        JButton getEditStore();
-    }
-
     @Override
     public void execute() {
         DefaultTableModel storeModel = new DefaultTableModel(
@@ -42,6 +35,13 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         getView().getCreateStore().addActionListener(e -> goTo(StoreFormPresenter.NAME));
         getView().getEditStore().addActionListener(e -> goTo(UserFormPresenter.NAME));
 
+    }
+
+    public interface Displayable extends View {
+        JTable getStoreTable();
+        JButton getCreateStore();
+        JButton getBackButton();
+        JButton getEditStore();
     }
 
     public static final String NAME = "store-list";

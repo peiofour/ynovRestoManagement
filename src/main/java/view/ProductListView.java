@@ -17,9 +17,9 @@ public class ProductListView implements ProductListPresenter.Displayable {
     @Override
     public Component getComponent() {
         JPanel panel = new JPanel();
-        panel.setLayout( new BorderLayout() );
-        panel.add(new JScrollPane(productTable),BorderLayout.CENTER);
+        panel.setLayout(new BorderLayout());
         productTable = new JTable();
+        panel.add(new JScrollPane(productTable),BorderLayout.CENTER);
 
 
         JPanel subPanel = new JPanel();

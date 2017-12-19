@@ -16,9 +16,9 @@ public class StoreListView implements StoreListPresenter.Displayable {
     @Override
     public Component getComponent() {
         JPanel panel = new JPanel();
-        panel.setLayout( new BorderLayout() );
-        panel.add(new JScrollPane(storeTable),BorderLayout.CENTER);
+        panel.setLayout( new BorderLayout());
         storeTable = new JTable();
+        panel.add(new JScrollPane(storeTable),BorderLayout.CENTER);
 
 
         JPanel subPanel = new JPanel();

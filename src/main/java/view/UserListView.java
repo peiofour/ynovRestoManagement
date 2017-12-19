@@ -16,9 +16,9 @@ public class UserListView implements UserListPresenter.Displayable {
     @Override
     public Component getComponent() {
         JPanel panel = new JPanel();
-        panel.setLayout( new BorderLayout() );
-        panel.add(new JScrollPane(userTable),BorderLayout.CENTER);
+        panel.setLayout(new BorderLayout());
         userTable = new JTable();
+        panel.add(new JScrollPane(userTable),BorderLayout.CENTER);
 
 
         JPanel subPanel = new JPanel();
