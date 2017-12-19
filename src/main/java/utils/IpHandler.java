@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IpHandler implements Serializable{
 
@@ -16,9 +18,14 @@ public class IpHandler implements Serializable{
         this.password = password;
     }
 
-    public String getServerIp() {
-        return serverIp;
+    public Map<String, String> getServerIp() {
+        Map<String, String> infos = new HashMap<>();
+        infos.put("ip",serverIp);
+        infos.put("username", username);
+        infos.put("password", password);
+        return infos;
     }
+
 
     public static IpHandler getInstance(){
 
