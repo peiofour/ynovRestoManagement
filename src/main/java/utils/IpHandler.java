@@ -7,11 +7,13 @@ public class IpHandler implements Serializable{
     private static IpHandler instance;
 
     private String serverIp;
-    private String name;
+    private String username;
     private String password;
 
-    public void setServerIp(String serverIp) {
+    public void setServerInfos(String serverIp, String username, String password) {
         this.serverIp = serverIp;
+        this.username = username;
+        this.password = password;
     }
 
     public String getServerIp() {
