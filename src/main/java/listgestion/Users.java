@@ -1,6 +1,6 @@
-package ListGestion;
+package listgestion;
 
-import usersClass.User;
+import usersclass.User;
 
 import java.util.ArrayList;
 import java.util.List;

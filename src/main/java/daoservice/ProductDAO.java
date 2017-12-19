@@ -1,4 +1,5 @@
-package DAOService;
+package daoservice;
+
 
 import java.util.List;
 

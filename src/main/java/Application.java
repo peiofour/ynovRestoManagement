@@ -1,4 +1,4 @@
-import ListGestion.Stores;
+import listgestion.Stores;
 import presenter.*;
 import view.*;
 

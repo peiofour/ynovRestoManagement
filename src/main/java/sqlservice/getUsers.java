@@ -1,7 +1,7 @@
-package SQLService;
+package sqlservice;
 
-import DAOService.UsersDAO;
-import usersClass.User;
+import daoservice.UsersDAO;
+import usersclass.User;
 
 import java.util.List;
 

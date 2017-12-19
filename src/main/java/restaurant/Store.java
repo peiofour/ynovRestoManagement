@@ -1,7 +1,7 @@
 package restaurant;
 
-import productClass.Product;
-import usersClass.Gerant;
+import productclass.Product;
+import usersclass.Gerant;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
