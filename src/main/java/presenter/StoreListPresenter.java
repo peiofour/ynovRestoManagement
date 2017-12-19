@@ -21,31 +21,30 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         JButton getCreateStore();
         JButton getBackButton();
         JButton getEditStore();
-
     }
 
     @Override
     public void execute() {
-        DefaultTableModel model = new DefaultTableModel(
+        DefaultTableModel storeModel = new DefaultTableModel(
                 new String[]{"Nom", "Address", "Phone", "Gerant"},
                 0
         );
         Stores.getInstance().stores.forEach(e -> {
-            model.addRow(new Object[] {
+            storeModel.addRow(new Object[] {
                     e.getName(),
                     e.getAddress(),
                     e.getPhoneNumber(),
                     e.getGerant().getFullName(),
             });
         });
-        getView().getStoreTable().setModel(model);
+        getView().getStoreTable().setModel(storeModel);
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
         getView().getCreateStore().addActionListener(e -> goTo(StoreFormPresenter.NAME));
         getView().getEditStore().addActionListener(e -> goTo(UserFormPresenter.NAME));
 
     }
 
-    public static final String NAME = "store";
+    public static final String NAME = "store-list";
 
     @Override
     public String getPath() {

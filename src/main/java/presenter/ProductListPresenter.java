@@ -21,17 +21,17 @@ public class ProductListPresenter extends Presenter<ProductListPresenter.Display
     @Override
     public void execute() {
         DefaultTableModel model = new DefaultTableModel(
-                new String[]{"Nom", "Address", "Phone", "Gerant"},
+                new String[]{"Nom du Produit", "Prix","Quantité"},
                 0
         );
         getView().getProductTable().setModel(model);
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
-        getView().getCreateProduct().addActionListener(e -> goTo(StoreFormPresenter.NAME));
-        getView().getEditProduct().addActionListener(e -> goTo(UserFormPresenter.NAME));
+        getView().getCreateProduct().addActionListener(e -> goTo(UserFormPresenter.NAME));
+        getView().getCreateProduct().addActionListener(e -> goTo(UserFormPresenter.NAME));
 
     }
 
-    public static final String NAME = "store";
+    public static final String NAME = "product-list";
 
     @Override
     public String getPath() {
