@@ -2,6 +2,7 @@ import listgestion.Stores;
 import presenter.*;
 import utils.ConnectionHandler;
 import utils.FileManager;
+import utils.RequestHandler;
 import view.*;
 
 import javax.swing.*;
@@ -37,5 +38,7 @@ public class Application {
         if (FileManager.checkIfFileExists("ip.ser")){
             ConnectionHandler.setInstance((ConnectionHandler) FileManager.deserializeObject("ip.ser"));
         }
+        System.out.println(RequestHandler.getInstance().getUsers().size());
+
     }
 }

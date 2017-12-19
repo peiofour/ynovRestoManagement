@@ -21,6 +21,9 @@ public abstract class User {
     @NotBlank
     private String password;
 
+    public User(){
+
+    }
 
     public User(int id, String firstname, String lastname, String email, String password){
         this.ID = id;
