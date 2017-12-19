@@ -7,7 +7,7 @@ import org.jdbi.v3.core.Jdbi;
 
 import java.util.List;
 
-public class getProduct implements ProductDAO {
+public class GetProduct implements ProductDAO {
     Jdbi jdbi = Jdbi.create("jdbc:mysql://10.31.0.188:3306/store_management", "root", "Tal33z");
 
 
