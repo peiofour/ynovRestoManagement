@@ -1,5 +1,6 @@
 package presenter;
 ;
+import utils.RequestHandler;
 import view.View;
 
 import javax.swing.*;
@@ -28,6 +29,14 @@ public class UserListPresenter extends Presenter<UserListPresenter.Displayable> 
             getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
             getView().getCreateUser().addActionListener(e -> goTo(UserFormPresenter.NAME));
             getView().getEditUser().addActionListener(e -> goTo(UserFormPresenter.NAME));
+
+            RequestHandler.getInstance().getUsers().forEach(e ->
+                model.addRow(new Object[]{
+                        e.getLastname(),
+                        e.getFirstname(),
+                        e.getEmail(),
+                        e.getRole()
+                }));
 
         }
 

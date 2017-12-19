@@ -3,6 +3,7 @@ package presenter;
 import listgestion.Stores;
 import restaurant.Store;
 import usersclass.Gerant;
+import utils.RequestHandler;
 import view.View;
 
 import javax.swing.*;
@@ -42,12 +43,14 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
 
     private void createStore(ActionEvent actionEvent) {
         try {
-            Store store = new Store(getView().getValueForField(STORENAME),
+
+            /*Store store = new Store(getView().getValueForField(STORENAME),
                                     getView().getValueForField(ADDRESS),
                     new Gerant(1,"rachid", "test","efefd@gmail.com","texsst"),
                                     Integer.valueOf(getView().getValueForField(PHONE_NUMBER)));
 
-            Stores.getInstance().addStore(store);
+            Stores.getInstance().addStore(store);*/
+            RequestHandler.getInstance().addStore(getView().getValueForField(STORENAME),getView().getValueForField(ADDRESS),1,getView().getValueForField(PHONE_NUMBER));
             getView().reset();
         }
         catch (Exception e) {

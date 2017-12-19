@@ -73,18 +73,6 @@ public class RequestHandler {
 
     // *******************************************************************************
 
-
-    /*CREATE TABLE IF NOT EXISTS users (
-            ID INT NOT NULL UNIQUE AUTO_INCREMENT,
-            user VARCHAR(30) UNIQUE ,
-    password VARCHAR(60),
-    firstname VARCHAR(20),
-    lastname VARCHAR(20),
-    role INT NOT NULL,
-    PRIMARY KEY (ID),
-    FOREIGN KEY (role) REFERENCES roles(ID)
-            ) ENGINE=InnoDB;*/
-
     public void addUser(String password, String firstname, String lastname, int role, String mail){
         //int id, String firstname, String lastname, String email, String password
         jdbi.withHandle(handle -> {
@@ -98,4 +86,21 @@ public class RequestHandler {
             return null;
         });
     }
+
+    // *******************************************************************************
+//RequestHandler.getInstance().addStore(getView().getValueForField(STORENAME),getView().getValueForField(ADDRESS),1,Integer.valueOf(getView().getValueForField(PHONE_NUMBER)));
+
+    public void addStore(String storeName, String address, int leaderId,String phoneNumber){
+        jdbi.withHandle(handle -> {
+            handle.createUpdate("INSERT INTO users(gerant_id,name,phone,address) VALUES (:gerant_id,:name,:phone,:address)")
+                    .bind("gerant_id", leaderId)
+                    .bind("name", storeName)
+                    .bind("phone", phoneNumber)
+                    .bind("address", address)
+                    .execute();
+            return null;
+        });
+    }
+
+
 }
