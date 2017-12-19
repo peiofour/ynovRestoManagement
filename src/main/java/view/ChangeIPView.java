@@ -1,5 +1,6 @@
 package view;
 
+import utils.Constants;
 import components.LabeledTextField;
 import presenter.ChangeIpPresenter;
 
@@ -7,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+
+import static utils.Constants.*;
 
 public class ChangeIPView implements ChangeIpPresenter.Displayable {
 
@@ -49,33 +52,33 @@ public class ChangeIPView implements ChangeIpPresenter.Displayable {
 
     private void addHostName(JPanel panel) {
         LabeledTextField hostName = new LabeledTextField("Nom d'utilisateur");
-        //fields.put(STORENAME, userName);
+        fields.put(BDD_USERNAME, hostName);
         panel.add(hostName);
     }
 
 
     private void addPassword(JPanel panel) {
         LabeledTextField password = new LabeledTextField("Mot de passe");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(BDD_MDP, password);
         panel.add(password);
     }
 
     private void addIpDatabase(JPanel panel) {
         LabeledTextField ipDatabase = new LabeledTextField("IP de la base de données");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(BDD_IP, ipDatabase);
         panel.add(ipDatabase);
     }
 
     private void addNameDatabase(JPanel panel) {
         LabeledTextField nameDatabase = new LabeledTextField("Nom de la base de données");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(BDD_NAME, nameDatabase);
         panel.add(nameDatabase);
     }
 
     private void addPorts(JPanel panel) {
-        LabeledTextField ports = new LabeledTextField("Ports");
-        //fields.put(PHONE_NUMBER, phoneNumber);
-        panel.add(ports);
+        LabeledTextField port = new LabeledTextField("Port");
+        fields.put(BDD_PORT, port);
+        panel.add(port);
     }
 
 
@@ -93,10 +96,10 @@ public class ChangeIPView implements ChangeIpPresenter.Displayable {
         return submitButton;
     }
 
-    /*@Override
+    @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
-    }*/
+    }
 
     @Override
     public void reset() {

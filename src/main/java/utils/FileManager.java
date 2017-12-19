@@ -5,7 +5,7 @@ import java.io.*;
 public class FileManager {
 
 
-    static void serializeObject(Object obj){
+    public static void serializeObject(Object obj){
         try {
             FileOutputStream fileOut = new FileOutputStream("ip.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -18,7 +18,7 @@ public class FileManager {
         }
     }
 
-    static Object deserializeObject(String filePath){
+    public static Object deserializeObject(String filePath){
         Object obj = new Object();
         try {
             FileInputStream fileIn = new FileInputStream(filePath);
