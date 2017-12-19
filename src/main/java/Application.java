@@ -31,5 +31,7 @@ public class Application {
         jFrame.setVisible(true);
         jFrame.setName(DashboardPresenter.NAME);
         jFrame.setSize(800, 800);
+
+
     }
 }

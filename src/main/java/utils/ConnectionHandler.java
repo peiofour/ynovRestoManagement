@@ -28,7 +28,7 @@ public class ConnectionHandler implements Serializable{
         return instance;
     }
 
-    public static void setinstance(ConnectionHandler inst){
+    public static void setInstance(ConnectionHandler inst){
         instance = inst;
     }
 }

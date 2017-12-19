@@ -96,10 +96,10 @@ public class ChangeIPView implements ChangeIpPresenter.Displayable {
         return submitButton;
     }
 
-    /*@Override
+    @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
-    }*/
+    }
 
     @Override
     public void reset() {
