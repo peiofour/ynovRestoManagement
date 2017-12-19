@@ -1,4 +1,4 @@
-import listgestion.Stores;
+import Listgestion.Stores;
 import presenter.*;
 import view.*;
 
@@ -26,6 +26,7 @@ public class Application {
         dispatcher.registerPresenter(new ProductListPresenter(new ProductListView()));
         dispatcher.registerPresenter(new ProductFormPresenter(new ProductFormView()));
         dispatcher.registerPresenter(new ModifyProfilPresenter(new ModifyProfilView()));
+        dispatcher.registerPresenter(new ChangeIpPresenter(new ChangeIPView()));
 
         jFrame.setVisible(true);
         jFrame.setName(DashboardPresenter.NAME);
