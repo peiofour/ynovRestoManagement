@@ -2,7 +2,6 @@ package presenter;
 
 
 import listgestion.Stores;
-import sqlservice.GetProduct;
 import view.View;
 
 import javax.swing.*;
@@ -31,11 +30,6 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
                     e.getAddress(),
                     e.getPhoneNumber(),
                     e.getGerant(),
-            });
-        });
-        GetProduct newgetProduct = new GetProduct();
-        newgetProduct.findProducts().forEach(e ->{
-            storeModel.addRow(new Object[]{
             });
         });
         getView().getStoreTable().setModel(storeModel);

@@ -18,7 +18,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
     @Override
     public void execute(){
         getView().getConnexion().addActionListener(e -> goTo(MenuPresenter.NAME));
-        getView().getIpButton().addActionListener(e -> goTo(ModifyProfilPresenter.NAME));
+        getView().getIpButton().addActionListener(e -> goTo(ChangeIpPresenter.NAME));
     }
 
     @Override
