@@ -17,6 +17,8 @@ public class UserFormPresenter extends Presenter<UserFormPresenter.Displayable>{
     }
 
     public interface Displayable extends View {
+        String getPath();
+
         JButton getBackButton();
         JButton getSubmitButton();
         void reset();
@@ -24,6 +26,6 @@ public class UserFormPresenter extends Presenter<UserFormPresenter.Displayable>{
 
     @Override
     public void execute() {
-        getView().getBackButton().addActionListener(e -> goTo(DashboardPresenter.NAME));
+        getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
     }
 }

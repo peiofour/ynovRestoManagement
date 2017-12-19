@@ -16,7 +16,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
 
     @Override
     public void execute(){
-        getView().getConnexion().addActionListener(e -> goTo(StoreListPresenter.NAME));
+        getView().getConnexion().addActionListener(e -> goTo(MenuPresenter.NAME));
     }
 
     @Override

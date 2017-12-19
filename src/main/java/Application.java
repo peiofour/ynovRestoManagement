@@ -1,10 +1,6 @@
 import ListGestion.Stores;
-import presenter.DashboardPresenter;
-import presenter.StoreFormPresenter;
-import presenter.StoreListPresenter;
-import view.DashboardView;
-import view.StoreFormView;
-import view.StoreListView;
+import presenter.*;
+import view.*;
 
 import javax.swing.*;
 
@@ -23,7 +19,12 @@ public class Application {
         service.Dispatcher dispatcher = new service.Dispatcher(jFrame);
         dispatcher.registerPresenter(new DashboardPresenter(new DashboardView()));
         dispatcher.registerPresenter(new StoreListPresenter(new StoreListView(), stores));
-        dispatcher.registerPresenter(new StoreFormPresenter(new StoreFormView(), stores));
+        dispatcher.registerPresenter(new StoreFormPresenter(new StoreFormView()));
+        dispatcher.registerPresenter(new UserFormPresenter(new UserFormView()));
+        dispatcher.registerPresenter(new MenuPresenter(new MenuView()));
+        dispatcher.registerPresenter(new UserListPresenter(new UserListView()));
+        dispatcher.registerPresenter(new ProductListPresenter(new ProductListView()));
+
         jFrame.setVisible(true);
         jFrame.setName(DashboardPresenter.NAME);
         jFrame.setSize(800, 800);

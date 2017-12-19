@@ -25,7 +25,7 @@ public class StoreListView implements StoreListPresenter.Displayable {
 
         createStore = new JButton("Create a new Store");
         editStore = new JButton("Edit a Store");
-        backButton = new JButton("Back to dashboard");
+        backButton = new JButton("Back to Menu");
 
         subPanel.add(createStore);
         subPanel.add(editStore);
@@ -48,6 +48,9 @@ public class StoreListView implements StoreListPresenter.Displayable {
     public JButton getBackButton() {
         return backButton;
     }
+
+    @Override
+    public JButton getEditStore(){ return editStore; }
 
 }
 

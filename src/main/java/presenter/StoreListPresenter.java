@@ -20,6 +20,8 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         JTable getStoreTable();
         JButton getCreateStore();
         JButton getBackButton();
+
+        JButton getEditStore();
     }
 
     @Override
@@ -37,8 +39,9 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
             });
         });
         getView().getStoreTable().setModel(model);
-        getView().getBackButton().addActionListener(e -> goTo(DashboardPresenter.NAME));
+        getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
         getView().getCreateStore().addActionListener(e -> goTo(StoreFormPresenter.NAME));
+        getView().getEditStore().addActionListener(e -> goTo(UserFormPresenter.NAME));
 
     }
 

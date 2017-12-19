@@ -19,10 +19,12 @@ public class StoreFormView implements StoreFormPresenter.Displayable {
         return NAME;
     }
 
+    private JComboBox gerantType;
     private JButton createStore;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
+    String[] gerantStrings = {"A","B","C"};
 
     public StoreFormView() {
         fields = new HashMap<>();
@@ -63,9 +65,11 @@ public class StoreFormView implements StoreFormPresenter.Displayable {
     }
 
     private void addGerant(JPanel panel) {
-        LabeledTextField gerant = new LabeledTextField("Gerant");
-        fields.put(GERANT, gerant);
-        panel.add(gerant);
+        JLabel gerantTypeLabel = new JLabel("Type");
+        panel.add(gerantTypeLabel);
+        gerantType = new JComboBox(gerantStrings);
+        gerantTypeLabel.setLabelFor(gerantType);
+        panel.add(gerantType);
     }
 
     @Override
