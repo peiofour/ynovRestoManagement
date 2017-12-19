@@ -1,5 +1,7 @@
 import listgestion.Stores;
 import presenter.*;
+import utils.ConnectionHandler;
+import utils.FileManager;
 import view.*;
 
 import javax.swing.*;
@@ -32,6 +34,8 @@ public class Application {
         jFrame.setName(DashboardPresenter.NAME);
         jFrame.setSize(800, 800);
 
-
+        if (FileManager.checkIfFileExists("ip.ser")){
+            ConnectionHandler.setInstance((ConnectionHandler) FileManager.deserializeObject("ip.ser"));
+        }
     }
 }

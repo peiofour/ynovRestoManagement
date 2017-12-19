@@ -8,14 +8,19 @@ public class ConnectionHandler implements Serializable{
 
     private static ConnectionHandler instance;
 
-    private Jdbi jdbi;
+    private String host;
+    private String username;
+    private String password;
 
     public void setServerInfos(String serverIp,String port, String dbname, String username, String password) {
-        jdbi = Jdbi.create("jdbc:mysql://"+serverIp+":"+port+"/"+dbname, username, password);
+        this.host = "jdbc:mysql://"+serverIp+":"+port+"/"+dbname;
+        this.username = username;
+        this.password = password;
+        FileManager.serializeObject(instance);
     }
 
     public Jdbi getJdbi() {
-        return jdbi;
+        return Jdbi.create(host,username,password);
     }
 
 
