@@ -1,5 +1,6 @@
 package presenter;
 
+import productclass.Product;
 import view.View;
 
 import javax.swing.*;
@@ -26,8 +27,8 @@ public class ProductListPresenter extends Presenter<ProductListPresenter.Display
         );
         getView().getProductTable().setModel(model);
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
-        getView().getCreateProduct().addActionListener(e -> goTo(UserFormPresenter.NAME));
-        getView().getCreateProduct().addActionListener(e -> goTo(UserFormPresenter.NAME));
+        getView().getCreateProduct().addActionListener(e -> goTo(ProductFormPresenter.NAME));
+        getView().getEditProduct().addActionListener(e -> goTo(ProductFormPresenter.NAME));
 
     }
 
