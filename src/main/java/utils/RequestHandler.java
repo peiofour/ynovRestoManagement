@@ -56,7 +56,7 @@ public class RequestHandler {
         }
 
         User user = null;
-        //int id, String firstname, String lastname, String email, String password
+
         switch(role){
             case "1": // Admin
                 user = new Admin(id,firstname,lastname,mail,password);
@@ -69,5 +69,18 @@ public class RequestHandler {
                 break;
         }
         return user;
+    }
+
+    // *******************************************************************************
+
+    public void addUser(){
+        //int id, String firstname, String lastname, String email, String password
+        jdbi.withHandle(handle -> {
+            handle.createUpdate("INSERT INTO user(id, name) VALUES (:id, :name)")
+                    .bind("id", 2)
+                    .bind("name", "Clarice")
+                    .execute();
+            return null;
+        });
     }
 }
