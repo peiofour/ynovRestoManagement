@@ -111,7 +111,8 @@ public class RequestHandler {
                         .list());
 
         if(user.size() == 1){
-            if(PasswordManager.checkPassword(user.get(0).getPassword(), password)){
+            System.out.println(user.get(0).getPassword());
+            if(PasswordManager.checkPassword(password,user.get(0).getPassword())){
                 System.out.println("good");
             }
             else{
