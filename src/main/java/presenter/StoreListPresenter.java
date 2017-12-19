@@ -1,6 +1,8 @@
 package presenter;
 
-import ListGestion.Stores;
+
+import listgestion.Stores;
+import sqlservice.GetProduct;
 import view.View;
 
 import javax.swing.*;
@@ -16,6 +18,7 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
         this.store = store;
     }
 
+
     @Override
     public void execute() {
         DefaultTableModel storeModel = new DefaultTableModel(
@@ -27,7 +30,12 @@ public class StoreListPresenter extends Presenter<StoreListPresenter.Displayable
                     e.getName(),
                     e.getAddress(),
                     e.getPhoneNumber(),
-                    e.getGerant().getFullName(),
+                    e.getGerant(),
+            });
+        });
+        GetProduct newgetProduct = new GetProduct();
+        newgetProduct.findProducts().forEach(e ->{
+            storeModel.addRow(new Object[]{
             });
         });
         getView().getStoreTable().setModel(storeModel);

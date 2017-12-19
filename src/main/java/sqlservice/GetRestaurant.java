@@ -1,11 +1,11 @@
-package SQLService;
+package sqlservice;
 
-import DAOService.RestaurantDAO;
+import daoservice.RestaurantDAO;
 import restaurant.Store;
 
 import java.util.List;
 
-public class getRestaurant implements RestaurantDAO {
+public class GetRestaurant implements RestaurantDAO {
     public List<Store> findStore() {
         return null;
     }

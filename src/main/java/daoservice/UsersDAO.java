@@ -1,8 +1,7 @@
-package DAOService;
+package daoservice;
 
-import usersClass.User;
+import usersclass.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UsersDAO {

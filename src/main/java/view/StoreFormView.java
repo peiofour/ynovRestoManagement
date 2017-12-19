@@ -8,7 +8,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static utils.constants.*;
+import static utils.Constants.*;
 
 public class StoreFormView implements StoreFormPresenter.Displayable {
 
