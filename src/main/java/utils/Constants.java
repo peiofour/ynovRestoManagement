@@ -16,6 +16,7 @@ public class Constants {
     public static final String LASTNAME = "lastName";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
+    public static final String ROLE = "role";
 
     public static final String MODIFYFIRSTNAME = "modifyFirstName";
     public static final String MODIFYLASTNAME = "modifyLastName";
