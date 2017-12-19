@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS users (
 ) ENGINE=InnoDB;
 
 INSERT INTO users(user, password, firstname, lastname, role) VALUES (
-  'admin@admin.com', '$2a$31$zKXqGJKJizkSfB34rwWZNeIDUHaLQtg72m7Koi6QgMmcNh4O3N3ry', 'Admin', 'Admin', '1'
+  'admin@admin.com', '$2a$12$0YMRL1NNQ4sXUJ3w7sggheCU5uqbwOTAbCE3oY9m6YtbFCflnqn4W', 'Admin', 'Admin', '1'
 )
