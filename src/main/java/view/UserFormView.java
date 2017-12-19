@@ -31,7 +31,8 @@ public class UserFormView implements UserFormPresenter.Displayable {
     public Component getComponent() {
 
         JPanel panel = new JPanel();
-
+        Box verticalBox = Box.createVerticalBox();
+        verticalBox.add(Box.createVerticalGlue());
         addFirstName(panel);
         addLastName(panel);
         addEmail(panel);
@@ -41,10 +42,11 @@ public class UserFormView implements UserFormPresenter.Displayable {
         backButton = new JButton("Back");
         submitButton = new JButton("Submit");
 
-        panel.add(backButton);
-        panel.add(submitButton);
+        verticalBox.add(backButton);
+        verticalBox.add(submitButton);
 
         panel.setSize(600, 900);
+        panel.add(verticalBox);
         return panel;
     }
 

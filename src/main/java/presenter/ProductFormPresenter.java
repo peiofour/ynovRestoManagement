@@ -5,7 +5,7 @@ import view.View;
 import javax.swing.*;
 
 public class ProductFormPresenter  extends Presenter<ProductFormPresenter.Displayable>{
-    public static final String NAME = "user-form";
+    public static final String NAME = "product-form";
 
     public ProductFormPresenter(ProductFormPresenter.Displayable view) {
         super(view);
@@ -26,5 +26,6 @@ public class ProductFormPresenter  extends Presenter<ProductFormPresenter.Displa
     @Override
     public void execute() {
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getSubmitButton().addActionListener(e -> goTo(ProductListPresenter.NAME));
     }
 }

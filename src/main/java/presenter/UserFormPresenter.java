@@ -27,5 +27,6 @@ public class UserFormPresenter extends Presenter<UserFormPresenter.Displayable>{
     @Override
     public void execute() {
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getSubmitButton().addActionListener(e -> goTo(UserListPresenter.NAME));
     }
 }

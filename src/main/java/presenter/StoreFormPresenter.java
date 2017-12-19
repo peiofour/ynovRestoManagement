@@ -35,8 +35,9 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
 
     @Override
     public void execute() {
-        getView().getSubmitButton().addActionListener(this::createStore);
+        getView().getSubmitButton().addActionListener(e -> goTo(StoreListPresenter.NAME));
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getSubmitButton().addActionListener(this::createStore);
 
     }
 

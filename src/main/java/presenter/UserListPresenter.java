@@ -21,7 +21,7 @@ public class UserListPresenter extends Presenter<UserListPresenter.Displayable> 
         @Override
         public void execute() {
             DefaultTableModel model = new DefaultTableModel(
-                    new String[]{"Nom", "Prénom", "Email","Mot de passe","Role"},
+                    new String[]{"Nom", "Prénom", "Email","Role"},
                     0
             );
             getView().getUserTable().setModel(model);
