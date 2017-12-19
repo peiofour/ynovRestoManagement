@@ -11,6 +11,8 @@ public class GetProduct implements ProductDAO {
     Jdbi jdbi = Jdbi.create("jdbc:mysql://10.31.0.188:3306/store_management", "root", "Tal33z");
 
 
+
+
     public List<String> findProducts() {
 
         List<String> productsList = jdbi.withHandle(handle -> {
