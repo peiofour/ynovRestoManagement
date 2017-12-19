@@ -1,4 +1,4 @@
-package productClass;
+package productclass;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;

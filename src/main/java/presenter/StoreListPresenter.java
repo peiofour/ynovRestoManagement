@@ -1,6 +1,6 @@
 package presenter;
 
-import ListGestion.Stores;
+import listgestion.Stores;
 import view.View;
 
 import javax.swing.*;

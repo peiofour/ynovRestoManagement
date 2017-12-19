@@ -1,7 +1,6 @@
-package DAOService;
+package daoservice;
 
 import restaurant.Store;
-import usersClass.User;
 
 import java.util.List;
 

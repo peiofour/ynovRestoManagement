@@ -1,7 +1,7 @@
-package resSQL;
+package ressql;
 
-import DAOService.RestaurantDAO;
-import SQLService.getRestaurant;
+import daoservice.RestaurantDAO;
+import sqlservice.getRestaurant;
 import restaurant.Store;
 
 import java.util.List;

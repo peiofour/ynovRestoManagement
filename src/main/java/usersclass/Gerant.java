@@ -1,4 +1,4 @@
-package usersClass;
+package usersclass;
 
 import restaurant.Store;
 

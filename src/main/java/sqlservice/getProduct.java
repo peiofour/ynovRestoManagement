@@ -1,7 +1,7 @@
-package SQLService;
+package sqlservice;
 
-import DAOService.ProductDAO;
-import productClass.Product;
+import daoservice.ProductDAO;
+import productclass.Product;
 
 import java.util.List;
 

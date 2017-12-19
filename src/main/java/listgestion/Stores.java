@@ -1,4 +1,4 @@
-package ListGestion;
+package listgestion;
 
 import restaurant.Store;
 

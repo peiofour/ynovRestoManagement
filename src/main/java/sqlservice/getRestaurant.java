@@ -1,6 +1,6 @@
-package SQLService;
+package sqlservice;
 
-import DAOService.RestaurantDAO;
+import daoservice.RestaurantDAO;
 import restaurant.Store;
 
 import java.util.List;

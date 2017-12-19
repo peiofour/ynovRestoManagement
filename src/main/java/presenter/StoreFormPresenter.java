@@ -1,14 +1,14 @@
 package presenter;
 
-import ListGestion.Stores;
+import listgestion.Stores;
 import restaurant.Store;
-import usersClass.Gerant;
+import usersclass.Gerant;
 import view.View;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-import static utils.constants.*;
+import static utils.Constants.*;
 
 public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable> {
 

@@ -1,8 +1,8 @@
-package resSQL;
+package ressql;
 
-import DAOService.UsersDAO;
-import SQLService.getUsers;
-import usersClass.User;
+import daoservice.UsersDAO;
+import sqlservice.getUsers;
+import usersclass.User;
 
 import java.util.List;
 

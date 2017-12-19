@@ -1,4 +1,4 @@
-package usersClass;
+package usersclass;
 
 public class Gestionnaire extends User {
     public Gestionnaire(int id, String firstname, String lastname, String email, String password) {
