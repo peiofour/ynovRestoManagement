@@ -30,7 +30,7 @@ public abstract class User {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+        this.password = password;
     }
 
     public String getName(){
