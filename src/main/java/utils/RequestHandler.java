@@ -3,6 +3,7 @@ package utils;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.StatementContext;
 import presenter.MenuPresenter;
+import restaurant.Store;
 import usersclass.Admin;
 import usersclass.Gerant;
 import usersclass.Gestionnaire;
@@ -101,6 +102,10 @@ public class RequestHandler {
             return null;
         });
     }
+    
+    /*public List<Store> getStores(){
+
+    }*/
 
     // *******************************************************************************
 
@@ -127,6 +132,7 @@ public class RequestHandler {
     }
 
     // *******************************************************************************
+
 
 
 }
