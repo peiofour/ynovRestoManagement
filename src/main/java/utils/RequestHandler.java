@@ -73,12 +73,27 @@ public class RequestHandler {
 
     // *******************************************************************************
 
-    public void addUser(){
+
+    /*CREATE TABLE IF NOT EXISTS users (
+            ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+            user VARCHAR(30) UNIQUE ,
+    password VARCHAR(60),
+    firstname VARCHAR(20),
+    lastname VARCHAR(20),
+    role INT NOT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (role) REFERENCES roles(ID)
+            ) ENGINE=InnoDB;*/
+
+    public void addUser(String password, String firstname, String lastname, int role, String mail){
         //int id, String firstname, String lastname, String email, String password
         jdbi.withHandle(handle -> {
-            handle.createUpdate("INSERT INTO user(id, name) VALUES (:id, :name)")
-                    .bind("id", 2)
-                    .bind("name", "Clarice")
+            handle.createUpdate("INSERT INTO users(password,firstname,lastname,role,user) VALUES (:password, :firstname, :lastname, :role, :user)")
+                    .bind("password", password)
+                    .bind("firstname", firstname)
+                    .bind("lastname", lastname)
+                    .bind("role", role)
+                    .bind("user", mail)
                     .execute();
             return null;
         });
