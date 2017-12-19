@@ -18,11 +18,11 @@ public class UserFormView implements UserFormPresenter.Displayable {
         return NAME;
     }
 
-    private JComboBox userType;
+    public JComboBox userType;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
-    String[] userStrings = {"A","B","C"};
+    String[] userStrings = {"Admin","Gérant","Gestionnaire"};
 
     public UserFormView() {
         fields = new HashMap<>();
@@ -96,6 +96,11 @@ public class UserFormView implements UserFormPresenter.Displayable {
     @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
+    }
+
+    @Override
+    public JComboBox getUserType() {
+        return userType;
     }
 
     @Override
