@@ -1,5 +1,6 @@
 package test;
 
+import SQLService.getProduct;
 import org.flywaydb.core.Flyway;
 import org.jdbi.v3.core.Jdbi;
 
@@ -11,17 +12,18 @@ public class App {
         Flyway flyway = new Flyway();
 
         // Point it to the database
-        flyway.setDataSource("jdbc:mysql://localhost:3306/store_management", "root", "Tal33z");
+        flyway.setDataSource("jdbc:mysql://10.31.0.188:3306/store_management", "root", "Tal33z");
 
         // Start the migration
         flyway.migrate();
 
-        Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost:3306/store_management", "root", "Tal33z");
+        Jdbi jdbi = Jdbi.create("jdbc:mysql://10.31.0.188:3306/store_management", "root", "Tal33z");
         List<String> names = jdbi.withHandle(handle ->
                 handle.createQuery("select user from users")
                         .mapTo(String.class)
                         .list());
 
         System.out.println(names);
+
     }
 }
