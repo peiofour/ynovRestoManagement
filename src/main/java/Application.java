@@ -37,12 +37,12 @@ public class Application {
         jFrame.setSize(800, 800);
 
         Flyway flyway = new Flyway();
-
+        flyway.setDataSource("jdbc:mysql://10.31.0.188:3306/store_management", "root", "Tal33z");
+        flyway.migrate();
         if (FileManager.checkIfFileExists("ip.ser")){
             ConnectionHandler.setInstance((ConnectionHandler) FileManager.deserializeObject("ip.ser"));
-            flyway.setDataSource(ConnectionHandler.getInstance().getHost(), ConnectionHandler.getInstance().getUsername(), ConnectionHandler.getInstance()
-                    .getPassword());
-            flyway.migrate();
         }
+
+
     }
 }
