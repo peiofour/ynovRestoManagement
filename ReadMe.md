@@ -4,23 +4,23 @@ Project realized with Maven and Swing for restaurant management
 
 ## Getting Started
 
-Download project from this link through git : https://github.com/peiofour/ynovRestoManagement
-Import this one with Eclipsce or IntelliJ
-Run application.java
+*Download project from this link through git : https://github.com/peiofour/ynovRestoManagement
+*Import this one with Eclipsce or IntelliJ
+*Run application.java
 
 ### Prerequisites
 
-Download IntelliJ on your computer : https://www.jetbrains.com/idea/
-or Eclipse : http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/R/eclipse-java-mars-R-win32-x86_64.zip
-Download et install Maven 
-Import Project on your IDE
-Launch Application for getting started ! 
+*Download IntelliJ on your computer : https://www.jetbrains.com/idea/
+*or Eclipse : http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/R/eclipse-java-mars-R-win32-x86_64.zip
+*Download et install Maven 
+*Import Project on your IDE
+*Launch Application for getting started ! 
 
 
 ## Running the tests
 
-For testing this app, you should add User / Product / Restaurant
-And testing it after with different: role Admin / Gerant / User
+*For testing this app, you should add User / Product / Restaurant
+*And testing it after with different: role Admin / Gerant / User
 
 ## Built With
 
