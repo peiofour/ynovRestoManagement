@@ -10,6 +10,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
 
     public interface Displayable extends View {
         JButton getConnexion();
+        JButton getIpButton();
     }
 
     public DashboardPresenter(Displayable view) { super(view); }
@@ -17,6 +18,7 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.Displayable
     @Override
     public void execute(){
         getView().getConnexion().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getIpButton().addActionListener(e -> goTo(ModifyProfilPresenter.NAME));
     }
 
     @Override

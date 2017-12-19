@@ -9,6 +9,7 @@ import java.awt.*;
 public class DashboardView implements DashboardPresenter.Displayable {
 
         private JButton loginButton;
+        private JButton ipButton;
         private JTextField mailText;
         private JLabel labelMail;
         private JLabel labelPassword;
@@ -16,6 +17,7 @@ public class DashboardView implements DashboardPresenter.Displayable {
 
         public DashboardView() {
             loginButton = new JButton("Login");
+            ipButton = new JButton("Changer IP");
             mailText = new JTextField();
             mailText.setColumns(10);
             passwordText = new JTextField();
@@ -34,6 +36,7 @@ public class DashboardView implements DashboardPresenter.Displayable {
             verticalBox.add(labelPassword);
             verticalBox.add(passwordText);
             verticalBox.add(loginButton);
+            verticalBox.add(ipButton);
             JPanel panel = new JPanel(new GridBagLayout());
             panel.add(verticalBox);
             return panel;
@@ -41,5 +44,9 @@ public class DashboardView implements DashboardPresenter.Displayable {
 
     public JButton getConnexion() {
        return loginButton;
+    }
+
+    public JButton getIpButton() {
+        return ipButton;
     }
 }

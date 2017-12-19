@@ -14,6 +14,7 @@ public class MenuView implements MenuPresenter.Displayable {
     private JButton liststores;
     private JButton modifyprofil;
     private JButton addUser;
+    private JButton deconnexion;
 
     public MenuView() {
         listusers = new JButton("Lister utilisateur");
@@ -21,6 +22,7 @@ public class MenuView implements MenuPresenter.Displayable {
         liststores = new JButton("Lister restaurants");
         modifyprofil = new JButton("Modifier Profil");
         addUser = new JButton("Créer un utilisateur");
+        deconnexion = new JButton("Déconnexion");
     }
 
     @Override
@@ -37,6 +39,8 @@ public class MenuView implements MenuPresenter.Displayable {
         verticalBox.add(modifyprofil);
         verticalBox.add(Box.createVerticalGlue());
         verticalBox.add(addUser);
+        verticalBox.add(Box.createVerticalGlue());
+        verticalBox.add(deconnexion);
         verticalBox.add(Box.createVerticalGlue());
         JPanel panel = new JPanel(new GridBagLayout());
         panel.add(verticalBox);
@@ -62,5 +66,9 @@ public class MenuView implements MenuPresenter.Displayable {
 
     @Override
     public JButton getBackButton() { return listusers;}
+
+    @Override
+    public JButton getDeconnexion(){return deconnexion;}
+
 
 }

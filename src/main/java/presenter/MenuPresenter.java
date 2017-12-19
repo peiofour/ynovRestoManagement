@@ -25,6 +25,7 @@ public class MenuPresenter extends Presenter<MenuPresenter.Displayable>{
         JButton getModifyProfilButton();
         JButton getAddUser();
         JButton getBackButton();
+        JButton getDeconnexion();
     }
 
     @Override
@@ -32,9 +33,9 @@ public class MenuPresenter extends Presenter<MenuPresenter.Displayable>{
         getView().getListUsersButton().addActionListener(e -> goTo(UserListPresenter.NAME));
         getView().getListProductsButton().addActionListener(e -> goTo(ProductListPresenter.NAME));
         getView().getListStoresButton().addActionListener(e -> goTo(StoreListPresenter.NAME));
-        getView().getModifyProfilButton().addActionListener(e -> goTo(StoreListPresenter.NAME));
+        getView().getModifyProfilButton().addActionListener(e -> goTo(ModifyProfilPresenter.NAME));
         getView().getAddUser().addActionListener(e -> goTo(UserFormPresenter.NAME));
-        getView().getBackButton().addActionListener(e -> goTo(DashboardPresenter.NAME));
+        getView().getDeconnexion().addActionListener(e-> goTo(DashboardPresenter.NAME));
 
     }
 }
