@@ -31,7 +31,7 @@ public class ProductListPresenter extends Presenter<ProductListPresenter.Display
 
     }
 
-    public static final String NAME = "product-list";
+    public static final String NAME = "product-list" ;
 
     @Override
     public String getPath() {
