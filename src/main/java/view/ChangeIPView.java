@@ -1,6 +1,5 @@
 package view;
 
-import utils.Constants;
 import components.LabeledTextField;
 import presenter.ChangeIpPresenter;
 
@@ -20,7 +19,6 @@ public class ChangeIPView implements ChangeIpPresenter.Displayable {
         return NAME;
     }
 
-    //private JButton createUser;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
@@ -87,9 +85,6 @@ public class ChangeIPView implements ChangeIpPresenter.Displayable {
     public JButton getBackButton() {
         return backButton;
     }
-
-    /*@Override
-    public JButton getCreateUser() { return createUser; }*/
 
     @Override
     public JButton getSubmitButton() {

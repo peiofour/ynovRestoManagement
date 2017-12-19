@@ -18,14 +18,15 @@ public class ModifyProfilPresenter extends Presenter<ModifyProfilPresenter.Displ
 
     public interface Displayable extends View {
         String getPath();
-
         JButton getBackButton();
         JButton getSubmitButton();
+        String getValueForField(String field);
         void reset();
     }
 
     @Override
     public void execute() {
         getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getSubmitButton().addActionListener(e -> goTo(MenuPresenter.NAME));
     }
 }

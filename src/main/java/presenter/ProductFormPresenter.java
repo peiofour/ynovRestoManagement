@@ -20,6 +20,7 @@ public class ProductFormPresenter  extends Presenter<ProductFormPresenter.Displa
         String getPath();
         JButton getBackButton();
         JButton getSubmitButton();
+        String getValueForField(String field);
         void reset();
     }
 

@@ -8,6 +8,10 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static utils.Constants.AMOUNT;
+import static utils.Constants.PRODUCTNAME;
+import static utils.Constants.PRODUCTPRICE;
+
 public class ProductFormView implements ProductFormPresenter.Displayable {
     public static final String NAME = "product-form-view";
 
@@ -16,10 +20,10 @@ public class ProductFormView implements ProductFormPresenter.Displayable {
         return NAME;
     }
 
-    //private JButton createUser;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
+
 
     public ProductFormView() {
         fields = new HashMap<>();
@@ -46,19 +50,19 @@ public class ProductFormView implements ProductFormPresenter.Displayable {
 
     private void addProductName(JPanel panel) {
         LabeledTextField productName = new LabeledTextField("Nom du Produit");
-        //fields.put(STORENAME, userName);
+        fields.put(PRODUCTNAME, productName);
         panel.add(productName);
     }
 
     private void addProductPrice(JPanel panel) {
         LabeledTextField productPrice = new LabeledTextField("Prix");
-        //fields.put(ADDRESS, address);
+        fields.put(PRODUCTPRICE, productPrice);
         panel.add(productPrice);
     }
 
     private void addAmount(JPanel panel) {
         LabeledTextField amount = new LabeledTextField("Quantité");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(AMOUNT, amount);
         panel.add(amount);
     }
 
@@ -67,18 +71,15 @@ public class ProductFormView implements ProductFormPresenter.Displayable {
         return backButton;
     }
 
-    /*@Override
-    public JButton getCreateUser() { return createUser; }*/
-
     @Override
     public JButton getSubmitButton() {
         return submitButton;
     }
 
-    /*@Override
+    @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
-    }*/
+    }
 
     @Override
     public void reset() {

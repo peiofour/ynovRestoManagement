@@ -18,9 +18,9 @@ public class UserFormPresenter extends Presenter<UserFormPresenter.Displayable>{
 
     public interface Displayable extends View {
         String getPath();
-
         JButton getBackButton();
         JButton getSubmitButton();
+        String getValueForField(String field);
         void reset();
     }
 

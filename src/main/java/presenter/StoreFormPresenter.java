@@ -27,7 +27,6 @@ public class StoreFormPresenter extends Presenter<StoreFormPresenter.Displayable
     public interface Displayable extends View {
         String getPath();
         JButton getBackButton();
-        JButton getCreateStore();
         JButton getSubmitButton();
         String getValueForField(String field);
         void reset();

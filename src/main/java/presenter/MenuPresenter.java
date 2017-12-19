@@ -18,7 +18,6 @@ public class MenuPresenter extends Presenter<MenuPresenter.Displayable>{
     }
 
     public interface Displayable extends View {
-        //JButton getSubmitButton();
         JButton getListUsersButton();
         JButton getListProductsButton();
         JButton getListStoresButton();

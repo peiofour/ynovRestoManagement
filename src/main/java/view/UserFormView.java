@@ -8,6 +8,8 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static utils.Constants.*;
+
 public class UserFormView implements UserFormPresenter.Displayable {
     public static final String NAME = "user-form-view";
 
@@ -17,7 +19,6 @@ public class UserFormView implements UserFormPresenter.Displayable {
     }
 
     private JComboBox userType;
-    //private JButton createUser;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
@@ -52,25 +53,25 @@ public class UserFormView implements UserFormPresenter.Displayable {
 
     private void addFirstName(JPanel panel) {
         LabeledTextField firstName = new LabeledTextField("firstName");
-        //fields.put(STORENAME, userName);
+        fields.put(FIRSTNAME, firstName);
         panel.add(firstName);
     }
 
     private void addLastName(JPanel panel) {
         LabeledTextField lastName = new LabeledTextField("Lastname");
-        //fields.put(ADDRESS, address);
+        fields.put(LASTNAME, lastName);
         panel.add(lastName);
     }
 
     private void addEmail(JPanel panel) {
         LabeledTextField email = new LabeledTextField("Email");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(EMAIL, email);
         panel.add(email);
     }
 
     private void addPassword(JPanel panel) {
         LabeledTextField password = new LabeledTextField("Password");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(PASSWORD, password);
         panel.add(password);
     }
 
@@ -87,18 +88,15 @@ public class UserFormView implements UserFormPresenter.Displayable {
         return backButton;
     }
 
-    /*@Override
-    public JButton getCreateUser() { return createUser; }*/
-
     @Override
     public JButton getSubmitButton() {
         return submitButton;
     }
 
-    /*@Override
+    @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
-    }*/
+    }
 
     @Override
     public void reset() {

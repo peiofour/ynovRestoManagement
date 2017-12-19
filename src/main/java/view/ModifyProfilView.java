@@ -8,6 +8,8 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static utils.Constants.*;
+
 public class ModifyProfilView implements ModifyProfilPresenter.Displayable {
 
     public static final String NAME = "modify-profil-view";
@@ -17,7 +19,6 @@ public class ModifyProfilView implements ModifyProfilPresenter.Displayable {
         return NAME;
     }
 
-    //private JButton createUser;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
@@ -49,38 +50,38 @@ public class ModifyProfilView implements ModifyProfilPresenter.Displayable {
     }
 
     private void addModifyFirstName(JPanel panel) {
-        LabeledTextField firstName = new LabeledTextField("Nom");
-        //fields.put(STORENAME, userName);
-        panel.add(firstName);
+        LabeledTextField modifyFirstName = new LabeledTextField("Nom");
+        fields.put(MODIFYFIRSTNAME, modifyFirstName);
+        panel.add(modifyFirstName);
     }
 
     private void addModifyLastName(JPanel panel) {
-        LabeledTextField lastName = new LabeledTextField("Prénom");
-        //fields.put(ADDRESS, address);
-        panel.add(lastName);
+        LabeledTextField modifyLastName = new LabeledTextField("Prénom");
+        fields.put(MODIFYLASTNAME, modifyLastName);
+        panel.add(modifyLastName);
     }
 
     private void addModifyEmail(JPanel panel) {
-        LabeledTextField email = new LabeledTextField("Email");
-        //fields.put(PHONE_NUMBER, phoneNumber);
-        panel.add(email);
+        LabeledTextField modifyEmail = new LabeledTextField("Email");
+        fields.put(MODIFYEMAIL, modifyEmail);
+        panel.add(modifyEmail);
     }
 
     private void addOldPassword(JPanel panel) {
         LabeledTextField oldPassword = new LabeledTextField("Ancien mot de passe");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(OLDPASSWORD, oldPassword);
         panel.add(oldPassword);
     }
 
     private void addModifyPassword(JPanel panel) {
-        LabeledTextField password = new LabeledTextField("Nouveau mot de passe");
-        //fields.put(PHONE_NUMBER, phoneNumber);
-        panel.add(password);
+        LabeledTextField modifyPassword = new LabeledTextField("Nouveau mot de passe");
+        fields.put(MODIFYPASSWORD, modifyPassword);
+        panel.add(modifyPassword);
     }
 
     private void addVerifPassword (JPanel panel) {
         LabeledTextField verifPassword = new LabeledTextField("Confirmer mot de passe");
-        //fields.put(PHONE_NUMBER, phoneNumber);
+        fields.put(VERIFPASSWORD, verifPassword);
         panel.add(verifPassword);
     }
 
@@ -89,18 +90,15 @@ public class ModifyProfilView implements ModifyProfilPresenter.Displayable {
         return backButton;
     }
 
-    /*@Override
-    public JButton getCreateUser() { return createUser; }*/
-
     @Override
     public JButton getSubmitButton() {
         return submitButton;
     }
 
-    /*@Override
+    @Override
     public String getValueForField(String field) {
         return fields.get(field).getInputValue();
-    }*/
+    }
 
     @Override
     public void reset() {

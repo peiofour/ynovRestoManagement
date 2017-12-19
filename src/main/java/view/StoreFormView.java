@@ -20,7 +20,6 @@ public class StoreFormView implements StoreFormPresenter.Displayable {
     }
 
     private JComboBox gerantType;
-    private JButton createStore;
     private JButton backButton;
     private JButton submitButton;
     private Map<String, LabeledTextField> fields;
@@ -77,9 +76,6 @@ public class StoreFormView implements StoreFormPresenter.Displayable {
     public JButton getBackButton() {
         return backButton;
     }
-
-    @Override
-    public JButton getCreateStore() { return createStore; }
 
     @Override
     public JButton getSubmitButton() {
