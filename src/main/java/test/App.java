@@ -1,6 +1,5 @@
 package test;
 
-import SQLService.getProduct;
 import org.flywaydb.core.Flyway;
 import org.jdbi.v3.core.Jdbi;
 

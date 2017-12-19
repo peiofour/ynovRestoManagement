@@ -1,7 +1,7 @@
 package sqlservice;
 
 
-import DAOService.ProductDAO;
+import daoservice.ProductDAO;
 import org.jdbi.v3.core.Jdbi;
 
 
