@@ -30,7 +30,7 @@ public class ChangeIpPresenter extends Presenter<ChangeIpPresenter.Displayable>{
     @Override
     public void execute() {
 
-        getView().getBackButton().addActionListener(e -> goTo(MenuPresenter.NAME));
+        getView().getBackButton().addActionListener(e -> goTo(DashboardPresenter.NAME));
         getView().getSubmitButton().addActionListener
                 (e -> ConnectionHandler.getInstance().setServerInfos(
                     getView().getValueForField(BDD_IP),

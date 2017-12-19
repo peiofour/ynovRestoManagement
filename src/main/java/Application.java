@@ -1,4 +1,5 @@
 import listgestion.Stores;
+import org.flywaydb.core.Flyway;
 import presenter.*;
 import utils.ConnectionHandler;
 import utils.FileManager;
@@ -35,10 +36,13 @@ public class Application {
         jFrame.setName(DashboardPresenter.NAME);
         jFrame.setSize(800, 800);
 
+        Flyway flyway = new Flyway();
+
         if (FileManager.checkIfFileExists("ip.ser")){
             ConnectionHandler.setInstance((ConnectionHandler) FileManager.deserializeObject("ip.ser"));
+            flyway.setDataSource(ConnectionHandler.getInstance().getHost(), ConnectionHandler.getInstance().getUsername(), ConnectionHandler.getInstance()
+                    .getPassword());
+            flyway.migrate();
         }
-        System.out.println(RequestHandler.getInstance().getUsers());
-
     }
 }

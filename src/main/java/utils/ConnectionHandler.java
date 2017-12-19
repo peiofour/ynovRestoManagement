@@ -36,4 +36,16 @@ public class ConnectionHandler implements Serializable{
     public static void setInstance(ConnectionHandler inst){
         instance = inst;
     }
+
+    public String getHost() {
+        return host;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

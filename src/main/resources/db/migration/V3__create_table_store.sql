@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS stores (
   gerant_id INT NOT NULL,
   name VARCHAR(20),
   phone VARCHAR(15),
+  address VARCHAR(50),
   PRIMARY KEY (ID),
   FOREIGN KEY (gerant_id) REFERENCES users(ID)
 )ENGINE=InnoDB;
