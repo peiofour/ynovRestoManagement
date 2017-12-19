@@ -38,7 +38,6 @@ public class Application {
         if (FileManager.checkIfFileExists("ip.ser")){
             ConnectionHandler.setInstance((ConnectionHandler) FileManager.deserializeObject("ip.ser"));
         }
-        System.out.println(RequestHandler.getInstance().getUsers());
 
     }
 }
